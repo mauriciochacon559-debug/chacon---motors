@@ -1,0 +1,565 @@
+/* ===================================
+   CHACON MOTORS - style.css
+   Hecho por: estudiante de programacion
+   Fecha: 2025
+   =================================== */
+
+/* Esto resetea los estilos por defecto del navegador
+   lo aprendi en clase, es lo primero que hay que poner */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos generales de toda la pagina */
+body {
+  font-family: Arial, sans-serif; /* fuente sencilla que funciona en todos lados */
+  background-color: #111111;
+  color: #ffffff;
+}
+
+/* Quiero que los links no tengan subrayado */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===================================
+   BARRA DE NAVEGACION
+   =================================== */
+.navbar {
+  background-color: #1a0f0f;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #e82020;
+  /* position sticky hace que el menu se quede fijo arriba al hacer scroll */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 22px;
+  color: #e82020;
+  letter-spacing: 2px;
+}
+
+/* el span del logo va en blanco */
+.logo span {
+  color: #ffffff;
+}
+
+.navbar ul {
+  list-style: none; /* quitar los puntitos de la lista */
+  display: flex;
+  gap: 25px;
+}
+
+.navbar ul li a {
+  color: #aaaaaa;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+/* cuando el mouse pasa encima */
+.navbar ul li a:hover {
+  color: #e82020;
+}
+
+/* ===================================
+   SECCION HERO (imagen principal)
+   =================================== */
+.hero {
+  position: relative; /* necesario para que el texto quede encima de la imagen */
+  height: 90vh;       /* vh = porcentaje de la pantalla */
+}
+
+/* La imagen ocupa todo el espacio */
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* esto hace que la imagen no se deforme */
+}
+
+/* El texto va encima de la imagen */
+.hero-texto {
+  position: absolute;
+  bottom: 60px;
+  left: 40px;
+  max-width: 500px;
+}
+
+/* La etiqueta roja pequeña arriba del titulo */
+.etiqueta {
+  background-color: #e82020;
+  color: #000000;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 5px 12px;
+  display: inline-block;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Titulo grande */
+.hero-texto h1 {
+  font-size: 60px;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 15px;
+}
+
+.hero-texto h1 span {
+  color: #e82020;
+  font-style: italic;
+  display: block;
+}
+
+.hero-texto p {
+  color: #dddddd;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* ===================================
+   BOTONES
+   =================================== */
+
+/* Boton rojo principal */
+.boton-rojo {
+  background-color: #e82020;
+  color: #000000;
+  padding: 12px 28px;
+  font-weight: bold;
+  font-size: 13px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.boton-rojo:hover {
+  background-color: #ff4444;
+}
+
+/* Boton con solo borde */
+.boton-borde {
+  background-color: transparent;
+  color: #ffffff;
+  padding: 12px 28px;
+  font-weight: bold;
+  font-size: 13px;
+  text-transform: uppercase;
+  border: 1px solid #555555;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.boton-borde:hover {
+  border-color: #e82020;
+  color: #e82020;
+}
+
+/* ===================================
+   ESTADISTICAS
+   =================================== */
+.estadisticas {
+  background-color: #1a0f0f;
+  display: flex;
+  justify-content: space-around;
+  padding: 30px 20px;
+  border-top: 1px solid #3a2020;
+  border-bottom: 1px solid #3a2020;
+}
+
+.stat {
+  text-align: center;
+}
+
+/* Los numeros grandes */
+.stat strong {
+  display: block;
+  font-size: 32px;
+  color: #e82020;
+  font-weight: 900;
+}
+
+.stat p {
+  font-size: 11px;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 5px;
+}
+
+/* ===================================
+   SECCIONES GENERALES
+   =================================== */
+.seccion {
+  padding: 60px 30px;
+  text-align: center;
+}
+
+/* subtitulo pequeño que va arriba del titulo */
+.subtitulo-seccion {
+  color: #e82020;
+  font-size: 13px;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.seccion h2 {
+  font-size: 36px;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-bottom: 40px;
+}
+
+/* El span dentro del h2 va en rojo */
+.seccion h2 span {
+  color: #e82020;
+}
+
+/* seccion con fondo diferente */
+.seccion-oscura {
+  background-color: #1a0f0f;
+}
+
+/* ===================================
+   CATALOGO - GRID DE TARJETAS
+   =================================== */
+
+/* Cuadricula de 3 columnas
+   aprendi que con grid se pueden hacer cuadriculas facilmente */
+.grid-motos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  text-align: left;
+}
+
+/* Cada tarjeta */
+.tarjeta {
+  background-color: #1a0f0f;
+  overflow: hidden;
+}
+
+/* cuando paso el mouse encima sube un poco */
+.tarjeta:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s;
+}
+
+/* La caja de la imagen */
+.imagen-tarjeta {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.imagen-tarjeta img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Los badges (Nuevo, Oferta, Destacado) */
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 4px 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.badge-nuevo {
+  background-color: #e82020;
+  color: #000000;
+}
+
+.badge-oferta {
+  background-color: #c07000;
+  color: #ffffff;
+}
+
+.badge-destacado {
+  background-color: #333333;
+  color: #dddddd;
+}
+
+/* Contenido dentro de la tarjeta */
+.cuerpo-tarjeta {
+  padding: 15px;
+}
+
+/* La categoria pequeña (Deportiva, Naked, etc) */
+.cuerpo-tarjeta small {
+  color: #e82020;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.cuerpo-tarjeta h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 5px 0;
+}
+
+/* Las especificaciones tecnicas */
+.specs {
+  font-size: 12px;
+  color: #888888;
+  margin-bottom: 15px;
+}
+
+/* La parte de abajo con precio y boton */
+.footer-tarjeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #3a2020;
+  padding-top: 12px;
+}
+
+/* El precio */
+.precio {
+  font-size: 20px;
+  font-weight: 900;
+  color: #e82020;
+}
+
+/* Precio tachado (precio viejo) */
+.precio-viejo {
+  font-size: 13px;
+  color: #666666;
+  margin-left: 8px;
+}
+
+/* Boton ver mas de cada tarjeta */
+.footer-tarjeta button {
+  background-color: transparent;
+  color: #e82020;
+  border: 1px solid #e82020;
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.footer-tarjeta button:hover {
+  background-color: #e82020;
+  color: #000000;
+}
+
+/* ===================================
+   BENEFICIOS (3 columnas)
+   =================================== */
+.beneficios {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap; /* si la pantalla es pequeña se acomodan solos */
+}
+
+.beneficio {
+  background-color: #2b1a1a;
+  padding: 25px;
+  width: 220px;
+  text-align: center;
+  border: 1px solid #3a2020;
+}
+
+/* Los emojis grandes */
+.icono {
+  font-size: 36px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.beneficio h4 {
+  font-size: 15px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  color: #e82020;
+}
+
+.beneficio p {
+  font-size: 13px;
+  color: #aaaaaa;
+  line-height: 1.6;
+}
+
+/* ===================================
+   CONTACTO
+   =================================== */
+.contenedor-contacto {
+  display: flex;
+  gap: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* Info a la izquierda */
+.info-contacto {
+  flex: 1;
+}
+
+.info-contacto h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #e82020;
+}
+
+.info-contacto p {
+  font-size: 14px;
+  color: #cccccc;
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+/* Formulario a la derecha */
+.formulario {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* los elementos van uno abajo del otro */
+  gap: 12px;
+}
+
+/* Las etiquetas del formulario */
+.formulario label {
+  font-size: 12px;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Los campos del formulario */
+.formulario input,
+.formulario select,
+.formulario textarea {
+  background-color: #2b1a1a;
+  border: 1px solid #3a2020;
+  color: #ffffff;
+  padding: 10px 12px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  width: 100%;
+}
+
+/* cuando el usuario hace click en el campo se pone rojo el borde */
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+  outline: none;
+  border-color: #e82020;
+}
+
+.formulario textarea {
+  height: 80px;
+  resize: none; /* que no se pueda cambiar el tamaño */
+}
+
+/* El boton de enviar (use la clase que ya tenia arriba) */
+.formulario .boton-rojo {
+  width: 100%;
+  padding: 14px;
+  font-size: 14px;
+}
+
+/* ===================================
+   FOOTER (pie de pagina)
+   =================================== */
+.footer {
+  background-color: #0c0808;
+  border-top: 1px solid #3a2020;
+  padding: 30px;
+  text-align: center;
+}
+
+.footer p {
+  color: #666666;
+  font-size: 13px;
+  margin: 10px 0;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: #666666;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-links a:hover {
+  color: #e82020;
+}
+
+/* ===================================
+   PANTALLAS PEQUEÑAS (celular)
+   aprendi que esto se llama "responsive"
+   =================================== */
+@media (max-width: 768px) {
+
+  /* En celular el menu se oculta */
+  .navbar ul {
+    display: none;
+  }
+
+  /* El titulo del hero mas pequeño */
+  .hero-texto h1 {
+    font-size: 36px;
+  }
+
+  /* Las estadisticas en dos columnas */
+  .estadisticas {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  /* El catalogo en una sola columna */
+  .grid-motos {
+    grid-template-columns: 1fr;
+  }
+
+  /* El contacto en una columna */
+  .contenedor-contacto {
+    flex-direction: column;
+  }
+}
+/* ===================================
+   LOGO IMAGEN
+   =================================== */
+.logo-img {
+  height: 55px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(232,32,32,0.3));
+}
+
+.logo-footer {
+  height: 60px;
+  margin-bottom: 10px;
+}
